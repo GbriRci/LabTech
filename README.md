@@ -73,16 +73,16 @@ Questa valutazione permetterà di selezionare i tecnici in modo che si scelga il
 
 TECNICO {<ins>ID_tecnico</ins>, Pensionato* , Nome, Cognome, E-mail, Telefono}
  
-FERIE {ID_tecnico: TECNICO, Inizio_ferie, Fine_ferie}
+FERIE {<ins>ID_tecnico: TECNICO</ins>, <ins>Inizio_ferie</ins>, Fine_ferie}
  
-APPUNTAMENTO { Codice_appuntamento, ID_tecnico: TECNICO, Data_appuntamento, Data_fine*, Ora_inizio*, Ora_fine*,  numero: LABORATORIO, sede: LABORATORIO, Campus: SEGRETERIA} 
+APPUNTAMENTO {<ins>Codice_appuntamento</ins>, ID_tecnico: TECNICO, Data_appuntamento, Data_fine*, Ora_inizio*, Ora_fine*,  numero: LABORATORIO, sede: LABORATORIO, Campus: SEGRETERIA} 
 
-SEGRETERIA {Campus, Classe_laurea}
+SEGRETERIA {<ins>Campus</ins>, Classe_laurea}
 
-LAVORO {codice_lavoro, data_lavoro, codice_appuntamento: APPUNTAMENTO, Data_valutazione*, Commento*, Punteggio*, ID_tecnico: TECNICO}
+LAVORO {<ins>codice_lavoro</ins>, data_lavoro, codice_appuntamento: APPUNTAMENTO, Data_valutazione*, Commento*, Punteggio*, ID_tecnico: TECNICO}
 
-LABORATORIO {numero, sede, tipo, num_postazioni} 
+LABORATORIO {<ins>numero</ins>, <ins>sede</ins>, tipo, num_postazioni} 
 
-COMPETENZA {campo, CAP, ID_tecnico: TECNICO, Nome_città}
+COMPETENZA {<ins>campo</ins>, <ins>ID_tecnico: TECNICO</ins>}
 
-DISPONIBILITÀ {ID_tecnico: TECNICO}
+DISPONIBILITÀ {<ins>CAP</ins>, <ins>ID_tecnico: TECNICO</ins>, Nome_città}
