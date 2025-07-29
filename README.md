@@ -1,88 +1,50 @@
-# 🧪LabTech 
-L'idea nasce dalla collabolazione con [sofcaroli2](https://github.com/sofcaroli2) e [Anapaxx](https://github.com/Anapaxx) per un progetto universitario.
-La figura dei tecnici di laboratorio risulta di notevole importanza per le attività degli studenti universitari. 
-Abbiamo, dunque, pensato di organizzare le attività dei suddetti risolvendo disagi che abbiamo rilevato nel nostro percorso scolastico.
-L’idea è la creazione di un database in cui le figure qualificate si proporranno e, vagliate dalla segreterie, saranno assegnate alle lezioni.
-Queste dovranno essere supervisionare e i tecnici assegnati potranno intervenire.
-Il database è stato pensato per essere applicato nell’Università di Bologna, ma non si esclude l’espansione del sistema in altre università o l’applicazione all’interno di un sito web.
-Lo scopo è di avere un tecnico sempre disponibile durante le lezioni universitarie e, in caso di problemi, memorizzare eventuali lavori effettuati nelle varie postazioni.
-La segreteria studenti sfrutterà il DB per l’organizzazione dei laboratori prima delle lezioni. 
-La query è basata sulle disponibilità fornite dai tecnici durante l’iscrizione al database.
-Le disponibilità comunicate saranno:
-- locale (luoghi in cui il tecnico è disposto a spostarsi);
-- qualifica (tecnico informatico, chimico, artistico…);
-- ferie (indisponibilità dei tecnici, con giorno di inizio e di fine).
+# 🧪LabTech
 
-Inoltre, la query è modellata in base a:
-- impegni (tecnico già assegnato ad un lavoro);
-- numero di postazioni (numero di tecnici per postazioni);
-- tipologia di laboratorio (tipologie diverse possono avere necessità maggiori o minori di personale, dato che cambia la durata e complessità del lavoro da svolgere).
+L'idea di **LabTech** nasce dalla collaborazione con [sofcaroli2](https://github.com/sofcaroli2) e [Anapaxx](https://github.com/Anapaxx) per un progetto universitario. Il nostro obiettivo è ottimizzare la gestione dei **tecnici di laboratorio** nelle università, risolvendo le problematiche di disponibilità e assegnazione.
 
-Il database sarà quindi il punto di raccordo tra: i tecnici che si iscrivono autonomamente e la segreteria che li prenota per una determinata data ed orario.
-Il docente in turno può lasciare una recensione scritta (commento e valutazione numerica) di quanto è stato svolto e inviarla alla segreteria; quest’ultima procederà a pubblicarla sul sito in modo che sia in futuro visibile dalla stessa e da tutte le differenti segreterie dei vari campus. Questa valutazione permetterà di selezionare i tecnici più adatti e competent per ogni situazione.
+Il sistema prevede la creazione di un **database centralizzato** dove i tecnici qualificati possono registrarsi e offrire la propria disponibilità. La **segreteria** gestirà le prenotazioni e le assegnazioni alle lezioni, assicurando la presenza di personale qualificato e disponibile.
 
-# ℹ️Raccolta Informazioni
-Il progetto è modellato sull’Università di Bologna.
-L’UNIBO presenta cinque campus sparsi per tutta l’Emilia Romagna, ognuno con diverse sedi:
-- nel campus di Bologna sono comprese Bologna, Imola e Ozzano dell’Emilia;
-- nel campus di Cesena sono comprese Cesena e Cesenatico;
-- nel campus di Forlì è compresa solo Forlì;
-- nel campus di Ravenna sono comprese Ravenna e Faenza;
-- nel campus di Rimini è compresa solo Rimini.
-Esiste una segreteria per ogni campus.
-Gli studenti sono circa 97.000, divisi in 260 corsi tra lauree triennali, lauree magistrali e lauree magistrali a ciclo unico; di questi 181 sono nel campus di Bologna.
-Il personale tecnico-amministrativo dell’università è composto da circa 3.000 persone.
-### Fonti: https://www.unibo.it/it/ateneo/chi-siamo/luniversita-oggi-tra-numeri-e-innovazione/lalma-mater-raccontata-dai-numeri#:~:text=93.753%20studentesse%20e%20studenti%20hanno,%2C%20Forl%C3%AC%2C%20Ravenna%2C%20Rimini
+### Scopo del Progetto
+LabTech mira a garantire la **disponibilità costante di tecnici** durante le lezioni universitarie e a **monitorare i lavori svolti** nelle postazioni. Sebbene pensato per l'Università di Bologna, il sistema è progettato per essere scalabile e applicabile ad altre università o integrabile in piattaforme web.
 
-# 📖Requisiti
-La query è basata sulle disponibilità fornite dai tecnici durante l’iscrizione aldatabase.
-Le disponibilità comunicate saranno: 
-- locale (luoghi in cui il tecnico è disposto a spostarsi)
-- qualifica (tecnico informatico, chimico, artistico…)
-- ferie (indisponibilità dei tecnici, con giorno di inizio e di fine)
+## 💡Funzionalità Principali e Requisiti
 
-Inoltre, la query è modellata in base a:
-- impegni (tecnico già assegnato ad un lavoro)
-- numero di postazioni (numero di tecnici per postazioni)
-- tipologia di laboratorio (tipologie diverse possono avere necessità maggiori o minori di personale, dato che cambia la durata e complessità del lavoro da svolgere)
+Il database è modellato per gestire le disponibilità dei tecnici e le necessità dei laboratori, considerando:
+* **Disponibilità dei tecnici:** Locale (luoghi), qualifica (specializzazione), e periodi di ferie.
+* **Fattori di prenotazione:** Impegni preesistenti dei tecnici, numero di postazioni del laboratorio e tipologia del laboratorio.
 
-Il database sarà quindi il punto di raccordo tra: i tecnici; che si iscrivono autonomamente, e la segreteria che li prenota per una determinata data ed orario.
-Il docente in turno può lasciare una recensione scritta (commento e valutazione numerica) di quanto è stato svolto e inviarla alla segreteria; quest’ultima procederà a pubblicarla sul sito in modo che sia in futuro visualizzabile dalla stessa e da tutte le differenti segreterie delle varie sedi. 
-Questa valutazione permetterà di selezionare i tecnici in modo che si scelga il più adatto e competente per ogni situazione.
+### Processi Chiave
+1.  **Registrazione tecnici:** I tecnici si iscrivono autonomamente.
+2.  **Prenotazione:** La segreteria prenota i tecnici in base a data, ora e requisiti specifici.
+3.  **Valutazione lavori:** I docenti possono lasciare una recensione (commento e valutazione numerica) dei lavori svolti, che viene poi pubblicata dalla segreteria per monitorare la qualità dei tecnici.
 
-# 🔐Vincoli & Business Rules
-### Disponibilità:
-- La segreteria assegna i lavori ai tecnici con almeno una settimana di preavviso;
-- Le ferie devono essere inserite dai tecnici con almeno una settimana di preavviso;
-- Ci sono due tipi di accesso separati: per il tecnico e per la segreteria;
-- Non puoi prenotare un tecnico non disponibile;
-- Non puoi prenotare un tecnico con competenze differenti dal tipo di laboratorio
-- Ci deve essere almeno un tecnico per un certo numero di studenti (varia per le competenze, perché una può essere più impegnativa di un altra)
+## 📊Architettura del Database
 
-### Date:
-- Se Data_appuntamento è giornaliera, Ora_fine deve essere maggiore a Ora_inizio;
-- Data_lavoro deve essere compresa o essere uguale a quella dell’appuntamento;
-- Se un appuntamento dura più giorni, Data_appuntamento deve essere precedente a Data_fine;
-- Se inserisco Ora_inizio di un appuntamento devo per forza mettere Ora_fine.
+### Requisiti e Vincoli Essenziali
+Per la definizione del database sono stati considerati requisiti informativi, sui processi, dinamici e vincoli d'integrità. Alcuni esempi includono:
+* Non è possibile prenotare un tecnico senza disponibilità o con competenze diverse da quelle richieste.
+* Gli appuntamenti sono fissati in un solo laboratorio.
 
-### Valutazioni:
-- La valutazione può essere fatta solo dopo che è stato svolto il lavoro;
-- Solo la segreteria ha il codice del lavoro e può quindi pubblicare la valutazione scritta dal professore presente nel laboratorio.
+### Schema E/R Concettuale
+Una rappresentazione concettuale delle entità e delle loro relazioni nel sistema LabTech.
+![Schema E/R](https://github.com/user-attachments/assets/5e97042d-9766-413a-9162-3e692c298414)
 
-# 🗺️Schema Relazionale
+### Schemi Logici
+Il diagramma seguente illustra la transizione dal modello concettuale a quello logico, evidenziando le entità e le loro interconnessioni.
+![Conceptual to Logic Diagram](https://github.com/user-attachments/assets/ecbadafa-66a8-421c-9b2d-8fc3a427e859)
 
-TECNICO {<ins>ID_tecnico</ins>, Pensionato* , Nome, Cognome, E-mail, Telefono}
- 
-FERIE {<ins>ID_tecnico: TECNICO</ins>, <ins>Inizio_ferie</ins>, Fine_ferie}
- 
-APPUNTAMENTO {<ins>Codice_appuntamento</ins>, ID_tecnico: TECNICO, Data_appuntamento, Data_fine*, Ora_inizio*, Ora_fine*,  numero: LABORATORIO, sede: LABORATORIO, Campus: SEGRETERIA} 
+## 🛠️Dettagli Implementativi (Schema Relazionale e Operazioni)
 
-SEGRETERIA {<ins>Campus</ins>, Classe_laurea}
+Il sistema prevede una serie di operazioni specifiche (es. inserimento ferie, creazione appuntamenti, registrazione lavori, calcolo valutazioni) e un dizionario dettagliato di entità, attributi e associazioni, ciascuno con volumi e costi stimati di accesso.
 
-LAVORO {<ins>codice_lavoro</ins>, data_lavoro, codice_appuntamento: APPUNTAMENTO, Data_valutazione*, Commento*, Punteggio*, ID_tecnico: TECNICO}
+**Esempi di entità e attributi chiave:**
+* **TECNICO:** ID_Tecnico, Nome, Cognome, E-mail, Telefono, Competenze.
+* **APPUNTAMENTO:** Codice_appuntamento, Data_appuntamento, Laboratorio, Tecnico coinvolto.
+* **LAVORO:** Codice_lavoro, Data_lavoro, Valutazione associata.
 
-LABORATORIO {<ins>numero</ins>, <ins>sede</ins>, tipo, num_postazioni} 
+Per una documentazione completa dei dizionari, delle tabelle di volume, delle operazioni dettagliate e dello schema relazionale, si prega di fare riferimento ai file specifici all'interno del repository (es. `docs/schema.md`, `docs/operations.md` etc., se deciderete di crearli).
 
-COMPETENZA {<ins>campo</ins>, <ins>ID_tecnico: TECNICO</ins>}
-
-DISPONIBILITÀ {<ins>CAP</ins>, <ins>ID_tecnico: TECNICO</ins>, Nome_città}
+## 👥Collaboratori
+Questo progetto è stato sviluppato in collaborazione con:
+* [sofcaroli2](https://github.com/sofcaroli2)
+* [Anapaxx](https://github.com/Anapaxx)
