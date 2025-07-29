@@ -27,10 +27,12 @@ Per la definizione del database sono stati considerati requisiti informativi, su
 
 ### Schema E/R Concettuale
 Una rappresentazione concettuale delle entità e delle loro relazioni nel sistema LabTech.
+
 ![Schema E/R](https://github.com/user-attachments/assets/5e97042d-9766-413a-9162-3e692c298414)
 
 ### Schemi Logici
 Il diagramma seguente illustra la transizione dal modello concettuale a quello logico, evidenziando le entità e le loro interconnessioni.
+
 ![Conceptual to Logic Diagram](https://github.com/user-attachments/assets/ecbadafa-66a8-421c-9b2d-8fc3a427e859)
 
 ## 🛠️Dettagli Implementativi (Schema Relazionale e Operazioni)
