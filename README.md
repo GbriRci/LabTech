@@ -50,3 +50,6 @@ Per una documentazione completa dei dizionari, delle tabelle di volume, delle op
 Questo progetto è stato sviluppato in collaborazione con:
 * [sofcaroli2](https://github.com/sofcaroli2)
 * [Anapaxx](https://github.com/Anapaxx)
+
+## Scarica la relazione completa:
+[https://github.com/GbriRci/LabTech/blob/main/LabTech_relazione.pdf](LabTech_relazione.pdf)
